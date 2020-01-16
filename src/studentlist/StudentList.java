@@ -48,17 +48,21 @@ public class StudentList {
         
         Student[] students = new Student[3];
         
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 2; i++) {
             System.out.println("Enter Student Name");    
             String name = input.nextLine();
+            System.out.println("Enter Student Address");    
+            String address = input.nextLine();
             Student student = new Student(name);
+            student.setAddress(address);
             students[i] = student;
         }
         
         System.out.println("Let's print them back");
         
         for(Student student: students) {
-            System.out.println(student.getName());
+            String format = "%s, address: %s/n";
+            System.out.printf(format, student.getName(), student.getAddress());
         }
         
     }
